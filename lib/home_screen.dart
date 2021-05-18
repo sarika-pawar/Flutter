@@ -5,6 +5,7 @@ import 'package:flutter_example/our_services.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';
+import 'products.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -77,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Text(
                 'ADDRESS: 100,hjfhjhbfjh hjnbvjhkj  ',
-              )
+              ),
               Text(
                 'MOBILE NO.: +123456789',
               ),
@@ -143,6 +144,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 icon: Icon(Icons.design_services_outlined),
                 label: Text('service'),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Products()),
+                  );
+                },
+                icon: Icon(Icons.picture_in_picture_alt_rounded),
+                label: Text('product'),
               ),
             ]),
       ),

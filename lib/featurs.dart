@@ -4,6 +4,7 @@ import 'package:flutter_example/home_screen.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';
+import 'products.dart';
 
 class Featurs extends StatelessWidget {
   @override
@@ -66,6 +67,16 @@ class Featurs extends StatelessWidget {
                 },
                 icon: Icon(Icons.design_services_outlined),
                 label: Text('service'),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Products()),
+                  );
+                },
+                icon: Icon(Icons.picture_in_picture_alt_rounded),
+                label: Text('product'),
               ),
             ],
           ),
