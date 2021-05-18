@@ -4,6 +4,7 @@ import 'package:flutter_example/home_screen.dart';
 import 'package:flutter_example/featurs.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
+import 'products.dart';
 
 class OurServices extends StatelessWidget {
   @override
@@ -67,6 +68,16 @@ class OurServices extends StatelessWidget {
                 },
                 icon: Icon(Icons.login_outlined),
                 label: Text('login'),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Products()),
+                  );
+                },
+                icon: Icon(Icons.picture_in_picture_alt_rounded),
+                label: Text('product'),
               ),
             ],
           ),
