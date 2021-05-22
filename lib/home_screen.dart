@@ -6,6 +6,10 @@ import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';
 import 'products.dart';
+import 'icon_home.dart';
+import 'setting_page.dart';
+import 'message.dart';
+//import 'my_contact.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -39,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -48,15 +53,15 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text('home'),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text('home'),
+        ),
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
             // Column is also a layout widget. It takes a list of children and
             // arranges them vertically. By default, it sizes itself to fit its
             // children horizontally, and tries to be as tall as its parent.
@@ -75,6 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Text(
                 'NAME: xyz',
+                style: TextStyle(
+                  color: Colors.blue,
+                  backgroundColor: Colors.yellow,
+                ),
               ),
               Text(
                 'ADDRESS: 100,hjfhjhbfjh hjnbvjhkj  ',
@@ -95,73 +104,132 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
               ),
-              TextButton.icon(
-                onPressed: () {
+            ],
+          ),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text('Drawer Header'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: Text('about'),
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AboutMe()),
                   );
                 },
-                icon: Icon(Icons.person),
-                label: Text('about'),
               ),
-              TextButton.icon(
-                onPressed: () {
+              ListTile(
+                leading: const Icon(Icons.arrow_forward_ios),
+                title: Text('Featurs'),
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Featurs()),
                   );
                 },
-                icon: Icon(Icons.arrow_forward_ios),
-                label: Text('featurs'),
               ),
-              TextButton.icon(
-                onPressed: () {
+              ListTile(
+                leading: const Icon(Icons.picture_as_pdf),
+                title: Text('picutes'),
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyPictures()),
                   );
                 },
-                icon: Icon(Icons.picture_in_picture_sharp),
-                label: Text('pictures'),
               ),
-              TextButton.icon(
-                onPressed: () {
+              ListTile(
+                leading: const Icon(Icons.login_outlined),
+                title: Text('login'),
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 },
-                icon: Icon(Icons.login_outlined),
-                label: Text('login'),
               ),
-              TextButton.icon(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OurServices()),
-                  );
-                },
-                icon: Icon(Icons.design_services_outlined),
-                label: Text('service'),
-              ),
-              TextButton.icon(
-                onPressed: () {
+              ListTile(
+                leading: const Icon(Icons.picture_in_picture_alt_rounded),
+                title: Text('product'),
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Products()),
                   );
                 },
-                icon: Icon(Icons.picture_in_picture_alt_rounded),
-                label: Text('product'),
               ),
-            ]),
-      ),
-      floatingActionButton: FloatingActionButton(
+              ListTile(
+                leading: const Icon(Icons.design_services_outlined),
+                title: Text('services'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OurServices()),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
           tooltip: 'Increment',
-          child: Icon(Icons.face)),
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
+          child: Icon(Icons.face),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.grey,
+          currentIndex: _selectedIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: "setting",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: "message",
+            ),
+          ],
+          onTap: (int index) {
+            setState(() {
+              _selectedIndex = index;
+
+              if (index == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => IconHome()),
+                );
+              }
+
+              if (index == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingPage()),
+                );
+              }
+
+              if (index == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Message()),
+                );
+              }
+            });
+          },
+        )
+        // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
