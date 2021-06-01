@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/about_me.dart';
-import 'package:flutter_application_1/featurs.dart';
-import 'package:flutter_application_1/our_services.dart';
-import 'package:flutter_application_1/page2.dart';
+import 'about_me.dart';
+import 'featurs.dart';
+import 'our_services.dart';
+import 'page2.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';

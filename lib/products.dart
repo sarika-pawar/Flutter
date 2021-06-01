@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/rendering.dart';
-import 'package:flutter_application_1/home_screen.dart';
-import 'package:flutter_application_1/featurs.dart';
+import 'home_screen.dart';
+import 'featurs.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';
