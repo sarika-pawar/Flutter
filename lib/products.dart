@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/home_screen.dart';
-import 'package:flutter_example/featurs.dart';
+//import 'package:flutter/rendering.dart';
+import 'package:flutter_application_1/home_screen.dart';
+import 'package:flutter_application_1/featurs.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';
@@ -14,12 +15,41 @@ class Products extends StatelessWidget {
         title: Text('Products'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: <Widget>[
-            Text(
-              'thiis is product page',
+            ListTile(
+              leading: const Icon(Icons.star_border),
+              title: Text(
+                'this is my first list item',
+                // textScaleFactor: 1.5,
+                style: TextStyle(color: Colors.deepPurple, fontSize: 20),
+              ),
+              subtitle: Text('#123'),
+              selected: true,
+              trailing: const Icon(Icons.menu),
+              tileColor: Colors.green[100],
+              selectedTileColor: Colors.amber[100],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             ),
+            ListTile(
+                leading: const Icon(Icons.star_border),
+                title: Text(
+                  'this is my second list item',
+                  textScaleFactor: 1.2,
+                  style: TextStyle(
+                    color: Colors.deepPurple,
+                  ),
+                ),
+                subtitle: Text('#pqr'),
+                selected: false,
+                trailing: const Icon(Icons.menu),
+                tileColor: Colors.green[100],
+                selectedTileColor: Colors.amber,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                )),
             TextButton.icon(
               onPressed: () {
                 Navigator.push(

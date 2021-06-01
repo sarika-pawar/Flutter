@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo test new',
       theme: ThemeData(
-        // This is the theme of your application.
+        // This is the theme of your applicati
         //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
@@ -28,4 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 

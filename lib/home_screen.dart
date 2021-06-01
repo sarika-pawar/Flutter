@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/about_me.dart';
-import 'package:flutter_example/featurs.dart';
-import 'package:flutter_example/our_services.dart';
+import 'package:flutter_application_1/about_me.dart';
+import 'package:flutter_application_1/featurs.dart';
+import 'package:flutter_application_1/our_services.dart';
+import 'package:flutter_application_1/page2.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
 import 'our_services.dart';
+import 'page1.dart';
 import 'products.dart';
 import 'icon_home.dart';
 import 'setting_page.dart';
@@ -12,7 +14,7 @@ import 'message.dart';
 //import 'my_contact.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title = ""}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -104,6 +106,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
               ),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Page2()),
+                  );
+                },
+                icon: Icon(Icons.access_alarm),
+                label: Text("Go to page 2"),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Page1()),
+                  );
+                },
+                icon: Icon(Icons.ac_unit),
+                label: Text("Go to page 1"),
+              )
             ],
           ),
         ),

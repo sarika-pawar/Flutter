@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/about_me.dart';
-import 'package:flutter_example/home_screen.dart';
-import 'package:flutter_example/featurs.dart';
+import 'package:flutter_application_1/about_me.dart';
+import 'package:flutter_application_1/home_screen.dart';
+import 'package:flutter_application_1/featurs.dart';
 import 'login_page.dart';
 import 'our_services.dart';
 import 'products.dart';
