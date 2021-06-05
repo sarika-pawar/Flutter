@@ -5,7 +5,7 @@ import 'our_services.dart';
 import 'page2.dart';
 import 'my_pictures.dart';
 import 'login_page.dart';
-import 'our_services.dart';
+//import 'our_services.dart';
 import 'page1.dart';
 import 'products.dart';
 import 'icon_home.dart';
