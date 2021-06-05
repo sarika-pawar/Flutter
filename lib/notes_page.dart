@@ -15,9 +15,15 @@ class NotesPage extends StatelessWidget {
         crossAxisCount: 2,
         children: <Widget>[
           Container(
+            //height: 200.0,
+            //width: 200.0,
             padding: const EdgeInsets.all(8),
-            child: const Text("He'd have you all unravel at the"),
-            color: Colors.teal[100],
+            decoration: new BoxDecoration(
+                image: new DecorationImage(
+              image: new AssetImage("images/new-flutter.png"),
+              fit: BoxFit.cover,
+            )),
+            // color: Colors.teal[100],
           ),
           Container(
             padding: const EdgeInsets.all(8),
