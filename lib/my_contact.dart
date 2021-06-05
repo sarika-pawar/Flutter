@@ -9,8 +9,16 @@ class Contact extends StatelessWidget {
         ),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              Container(
+                  height: 200.0,
+                  width: 200.0,
+                  decoration: new BoxDecoration(
+                      image: new DecorationImage(
+                    image: new AssetImage("images/new-flutter.png"),
+                    fit: BoxFit.fill,
+                  ))),
               Text('this is Contact Page '),
               Text('You can contact here '),
             ],
