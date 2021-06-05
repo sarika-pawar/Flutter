@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timelines/timelines.dart';
 
 class Message extends StatelessWidget {
   @override
@@ -7,13 +8,17 @@ class Message extends StatelessWidget {
         appBar: AppBar(
           title: Text('Message Page'),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('this is message Page '),
-              Text('You can crate message here '),
-            ],
+        body: Timeline.tileBuilder(
+          theme: TimelineThemeData(
+            color: Colors.pinkAccent,
+          ),
+          builder: TimelineTileBuilder.fromStyle(
+            contentsAlign: ContentsAlign.alternating,
+            contentsBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Text('Timeline Event $index'),
+            ),
+            itemCount: 6,
           ),
         ));
   }
